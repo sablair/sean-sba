@@ -1,9 +1,12 @@
 const express = require('express');
-const fs = require('fs');
-
 const app = express();
 
 app.set('port', (process.env.PORT || 3001));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -19,7 +22,10 @@ app.get('/api/search', (req, res) => {
         });
         return;
     }
-    res.json([{ "name" : "Grocery basket", "details": "Very cool basket" }]);
+    res.json([
+        { "id": 1, "name" : "Grocery basket", "details": "Very cool basket" },
+        { "id": 2, "name" : "Grocery cart", "details": "Very cool cart" }
+    ]);
 });
 
 app.listen(app.get('port'), () => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
+import { getSearchTerms } from '../../services/SearchService';
 
 class SearchText extends Component {
     constructor () {
@@ -12,11 +13,19 @@ class SearchText extends Component {
         };
     }
 
-    onUpdateInput(input) {
-        this.setState({ input }, () => console.log('input', input));
+    fetchSearchTerms() {        
+        const { input } = this.state;
+        if (input) {
+            getSearchTerms(input)
+                .then((data) => this.setState({ dataSource: data }));
+        }
     }
 
-    onNewRequest(input) {
+    onUpdateInput(input) {
+        this.setState({ input }, () => this.fetchSearchTerms());
+    }
+
+    onNewRequest(input) {        
         this.props.onSearch(input);
     }
 

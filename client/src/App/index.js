@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import SearchText from '../components/SearchText';
 import SearchResults from '../components/SearchResults';
+import { getSearchTermResults } from '../services/SearchService';
 
 class App extends Component {
   constructor() {
     super();
+    this.fetchResults = this.fetchResults.bind(this);
     this.state = {
       results: []
     }
   }
 
-  fetchResults(term) {
-    console.log('execute fetch with', term);
+  fetchResults(term) {    
+    getSearchTermResults(term)
+      .then((data) => this.setState({ results: data }));
   }
 
   render() {
