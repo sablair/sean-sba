@@ -4,7 +4,7 @@ import _ from 'lodash';
 const url = 'http://localhost:3001/api';
 
 function getSearchTerms(term) {
-    return axios.get(`${url}/search?term=${term}`)
+    return axios.get(`${url}/terms?term=${term}`)
         .then((res) => _.map(res.data, ({name}) => name));
 }
 

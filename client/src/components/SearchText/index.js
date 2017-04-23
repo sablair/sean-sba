@@ -7,6 +7,7 @@ class SearchText extends Component {
         super();
         this.onUpdateInput = this.onUpdateInput.bind(this);
         this.onNewRequest = this.onNewRequest.bind(this);
+        this.onClose = this.onClose.bind(this);
         this.state = {
             dataSource: [],
             input: ''
@@ -18,7 +19,7 @@ class SearchText extends Component {
         if (input) {
             getSearchTerms(input)
                 .then((data) => this.setState({ dataSource: data }));
-        }
+        }        
     }
 
     onUpdateInput(input) {
@@ -29,6 +30,13 @@ class SearchText extends Component {
         this.props.onSearch(input);
     }
 
+    onClose() {
+        const { input } = this.state;
+        if (input === '') {
+            this.props.onClear();
+        }
+    }
+
     render() {
         return <AutoComplete 
                 id="search"
@@ -36,6 +44,7 @@ class SearchText extends Component {
                 dataSource={this.state.dataSource}
                 onUpdateInput={this.onUpdateInput}
                 onNewRequest={this.onNewRequest}
+                onClose={this.onClose}
                 />;
     }
 }

@@ -1,3 +1,4 @@
+const routes = require('./routes');
 const express = require('express');
 const app = express();
 
@@ -13,20 +14,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-app.get('/api/search', (req, res) => {
-    const { term } = req.query;
-
-    if (!term) {
-        res.json({
-            error: 'Missing required parameter `term`',
-        });
-        return;
-    }
-    res.json([
-        { "id": 1, "name" : "Grocery basket", "details": "Very cool basket" },
-        { "id": 2, "name" : "Grocery cart", "details": "Very cool cart" }
-    ]);
-});
+app.use('/api', routes);
 
 app.listen(app.get('port'), () => {
     console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console

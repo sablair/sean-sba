@@ -8,14 +8,21 @@ class App extends Component {
   constructor() {
     super();
     this.fetchResults = this.fetchResults.bind(this);
+    this.reset = this.reset.bind(this);
     this.state = {
       results: []
     }
   }
 
   fetchResults(term) {    
-    getSearchTermResults(term)
-      .then((data) => this.setState({ results: data }));
+    if (term !== '') {
+      getSearchTermResults(term)
+        .then((data) => this.setState({ results: data }));
+    }
+  }
+
+  reset() {
+    this.setState({results: []});
   }
 
   render() {
@@ -23,7 +30,7 @@ class App extends Component {
       <div>
         <AppBar 
           title="Shopback Test"
-          iconElementRight={<SearchText onSearch={ this.fetchResults } />}
+          iconElementRight={<SearchText onSearch={ this.fetchResults } onClear={ this.reset } />}
         />
         <SearchResults results={ this.state.results } />    
       </div>

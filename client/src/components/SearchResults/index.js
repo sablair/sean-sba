@@ -16,7 +16,10 @@ class SearchResults extends Component {
         if (results.length > 0) {
             renderedResult = (
                 <div>
-                    { _.map(results, ({id, name, details}) => <SearchResultItem key={id} name={name} details={details}/>)}
+                    <div><h3>Result rows returned: {results.length}</h3></div>
+                    <div>
+                        { _.map(results, ({_id, name, details}) => <SearchResultItem key={_id} name={name} details={details} />)}
+                    </div>
                 </div>
             );
         }
