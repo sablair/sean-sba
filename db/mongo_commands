@@ -1,0 +1,410 @@
+use shopback;
+
+db.createCollection("items", {
+	autoIndexId: true,
+	capped: false
+})
+
+db.items.insert([{
+		"name": "magna. Duis dignissim tempor arcu. Vestibulum ut eros non enim",
+		"details": "Aenean euismod mauris eu elit. Nulla facilisi. Sed"
+	},
+	{
+		"name": "Donec tempus, lorem fringilla ornare placerat, orci lacus vestibulum lorem,",
+		"details": "sem ut"
+	},
+	{
+		"name": "suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis",
+		"details": "in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris"
+	},
+	{
+		"name": "Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue",
+		"details": "ac, eleifend vitae, erat. Vivamus nisi. Mauris nulla."
+	},
+	{
+		"name": "Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet",
+		"details": "volutpat. Nulla facilisis. Suspendisse"
+	},
+	{
+		"name": "nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus,",
+		"details": "mauris id sapien. Cras dolor dolor, tempus non, lacinia at, iaculis"
+	},
+	{
+		"name": "dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus",
+		"details": "cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo"
+	},
+	{
+		"name": "Cras eu tellus eu augue porttitor interdum. Sed auctor odio",
+		"details": "dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit"
+	},
+	{
+		"name": "dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis nec,",
+		"details": "aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam"
+	},
+	{
+		"name": "mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor",
+		"details": "ullamcorper. Duis cursus, diam at pretium aliquet,"
+	},
+	{
+		"name": "nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam",
+		"details": "Ut tincidunt orci quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus faucibus leo, in"
+	},
+	{
+		"name": "orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce",
+		"details": "eu tempor"
+	},
+	{
+		"name": "pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper,",
+		"details": "turpis. Nulla aliquet. Proin velit. Sed malesuada augue ut lacus. Nulla"
+	},
+	{
+		"name": "In condimentum. Donec at arcu. Vestibulum ante ipsum primis in",
+		"details": "erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor."
+	},
+	{
+		"name": "ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu",
+		"details": "est, vitae sodales"
+	},
+	{
+		"name": "orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu,",
+		"details": "arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non,"
+	},
+	{
+		"name": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet,",
+		"details": "orci lacus vestibulum lorem, sit amet ultricies sem magna"
+	},
+	{
+		"name": "parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique",
+		"details": "Phasellus dolor elit, pellentesque a, facilisis non, bibendum"
+	},
+	{
+		"name": "velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor",
+		"details": "ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed"
+	},
+	{
+		"name": "massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices",
+		"details": "sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+	},
+	{
+		"name": "taciti sociosqu ad litora torquent per conubia nostra, per inceptos",
+		"details": "odio vel est tempor bibendum. Donec felis orci,"
+	},
+	{
+		"name": "non massa non ante bibendum ullamcorper. Duis cursus, diam at",
+		"details": "quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula."
+	},
+	{
+		"name": "ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam",
+		"details": "libero est, congue a, aliquet vel, vulputate eu, odio. Phasellus at"
+	},
+	{
+		"name": "amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis",
+		"details": "Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit"
+	},
+	{
+		"name": "augue. Sed molestie. Sed id risus quis diam luctus lobortis.",
+		"details": "ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class"
+	},
+	{
+		"name": "a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo",
+		"details": "cursus purus. Nullam"
+	},
+	{
+		"name": "nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut",
+		"details": "consectetuer, cursus"
+	},
+	{
+		"name": "sed pede nec ante blandit viverra. Donec tempus, lorem fringilla",
+		"details": "sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat"
+	},
+	{
+		"name": "Donec non justo. Proin non massa non ante bibendum ullamcorper.",
+		"details": "vitae velit egestas lacinia."
+	},
+	{
+		"name": "tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing,",
+		"details": "scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan"
+	},
+	{
+		"name": "primis in faucibus orci luctus et ultrices posuere cubilia Curae;",
+		"details": "Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie arcu."
+	},
+	{
+		"name": "lorem eu metus. In lorem. Donec elementum, lorem ut aliquam",
+		"details": "ut eros non enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula"
+	},
+	{
+		"name": "enim, condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin",
+		"details": "in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac"
+	},
+	{
+		"name": "ornare lectus justo eu arcu. Morbi sit amet massa. Quisque",
+		"details": "est mauris, rhoncus id, mollis"
+	},
+	{
+		"name": "gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie",
+		"details": "feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis"
+	},
+	{
+		"name": "Nunc commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque",
+		"details": "Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem"
+	},
+	{
+		"name": "semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In",
+		"details": "eros non enim commodo hendrerit."
+	},
+	{
+		"name": "pellentesque, tellus sem mollis dui, in sodales elit erat vitae",
+		"details": "sem,"
+	},
+	{
+		"name": "cursus vestibulum. Mauris magna. Duis dignissim tempor arcu. Vestibulum ut",
+		"details": "feugiat non, lobortis quis, pede. Suspendisse dui. Fusce"
+	},
+	{
+		"name": "velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc",
+		"details": "odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est"
+	},
+	{
+		"name": "Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit",
+		"details": "eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent"
+	},
+	{
+		"name": "consectetuer euismod est arcu ac orci. Ut semper pretium neque.",
+		"details": "elit elit fermentum risus, at fringilla purus mauris a nunc. In at"
+	},
+	{
+		"name": "dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum",
+		"details": "lobortis tellus justo"
+	},
+	{
+		"name": "quis, tristique ac, eleifend vitae, erat. Vivamus nisi. Mauris nulla.",
+		"details": "Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod"
+	},
+	{
+		"name": "vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor",
+		"details": "est ac mattis semper, dui lectus rutrum urna, nec luctus"
+	},
+	{
+		"name": "ornare, lectus ante dictum mi, ac mattis velit justo nec",
+		"details": "eget, volutpat ornare,"
+	},
+	{
+		"name": "ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer",
+		"details": "erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet, erat nonummy"
+	},
+	{
+		"name": "Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis,",
+		"details": "eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam"
+	},
+	{
+		"name": "amet nulla. Donec non justo. Proin non massa non ante",
+		"details": "magna. Suspendisse tristique neque venenatis lacus. Etiam bibendum fermentum"
+	},
+	{
+		"name": "tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat.",
+		"details": "interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan"
+	},
+	{
+		"name": "nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam",
+		"details": "Morbi"
+	},
+	{
+		"name": "lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor",
+		"details": "amet ultricies sem magna nec quam. Curabitur vel lectus. Cum sociis natoque penatibus et"
+	},
+	{
+		"name": "Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis. Nulla",
+		"details": "nulla. Integer vulputate, risus a ultricies adipiscing,"
+	},
+	{
+		"name": "penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin",
+		"details": "eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec fringilla."
+	},
+	{
+		"name": "id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend",
+		"details": "arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id,"
+	},
+	{
+		"name": "enim non nisi. Aenean eget metus. In nec orci. Donec",
+		"details": "ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu"
+	},
+	{
+		"name": "arcu. Vestibulum ut eros non enim commodo hendrerit. Donec porttitor",
+		"details": "velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus"
+	},
+	{
+		"name": "elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu",
+		"details": "risus. Quisque libero lacus, varius et, euismod et, commodo at, libero."
+	},
+	{
+		"name": "nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce",
+		"details": "velit."
+	},
+	{
+		"name": "est, congue a, aliquet vel, vulputate eu, odio. Phasellus at",
+		"details": "ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet"
+	},
+	{
+		"name": "eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris",
+		"details": "Cum sociis natoque penatibus et magnis dis"
+	},
+	{
+		"name": "mauris a nunc. In at pede. Cras vulputate velit eu",
+		"details": "luctus vulputate, nisi sem semper erat, in consectetuer"
+	},
+	{
+		"name": "mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent",
+		"details": "Nunc sed orci lobortis augue scelerisque mollis."
+	},
+	{
+		"name": "non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec",
+		"details": "Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor."
+	},
+	{
+		"name": "vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce",
+		"details": "Cum sociis natoque penatibus et magnis dis"
+	},
+	{
+		"name": "turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla",
+		"details": "molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos"
+	},
+	{
+		"name": "tempor lorem, eget mollis lectus pede et risus. Quisque libero",
+		"details": "parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim."
+	},
+	{
+		"name": "iaculis, lacus pede sagittis augue, eu tempor erat neque non",
+		"details": "Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper"
+	},
+	{
+		"name": "ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat",
+		"details": "nibh. Quisque nonummy ipsum"
+	},
+	{
+		"name": "Cras dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis",
+		"details": "Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci"
+	},
+	{
+		"name": "Sed auctor odio a purus. Duis elementum, dui quis accumsan",
+		"details": "Nulla tincidunt, neque vitae semper egestas, urna"
+	},
+	{
+		"name": "Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper,",
+		"details": "ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et"
+	},
+	{
+		"name": "aliquet, metus urna convallis erat, eget tincidunt dui augue eu",
+		"details": "malesuada"
+	},
+	{
+		"name": "massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices",
+		"details": "Integer in magna. Phasellus dolor"
+	},
+	{
+		"name": "tortor at risus. Nunc ac sem ut dolor dapibus gravida.",
+		"details": "ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare."
+	},
+	{
+		"name": "ornare placerat, orci lacus vestibulum lorem, sit amet ultricies sem",
+		"details": "a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices"
+	},
+	{
+		"name": "in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit",
+		"details": "et ipsum cursus vestibulum. Mauris magna. Duis"
+	},
+	{
+		"name": "eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc",
+		"details": "odio semper cursus."
+	},
+	{
+		"name": "consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem,",
+		"details": "metus. Aenean sed pede nec ante blandit viverra. Donec tempus, lorem"
+	},
+	{
+		"name": "lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras",
+		"details": "ornare placerat, orci lacus vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur"
+	},
+	{
+		"name": "Nam ligula elit, pretium et, rutrum non, hendrerit id, ante.",
+		"details": "Sed auctor odio a"
+	},
+	{
+		"name": "In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum",
+		"details": "feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis"
+	},
+	{
+		"name": "semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae",
+		"details": "ornare tortor at risus. Nunc ac"
+	},
+	{
+		"name": "in molestie tortor nibh sit amet orci. Ut sagittis lobortis",
+		"details": "inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi"
+	},
+	{
+		"name": "Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc",
+		"details": "amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus"
+	},
+	{
+		"name": "purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam",
+		"details": "Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim."
+	},
+	{
+		"name": "non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget",
+		"details": "cursus vestibulum. Mauris magna. Duis dignissim tempor"
+	},
+	{
+		"name": "ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu",
+		"details": "ligula eu enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam"
+	},
+	{
+		"name": "blandit viverra. Donec tempus, lorem fringilla ornare placerat, orci lacus",
+		"details": "mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem,"
+	},
+	{
+		"name": "tristique pellentesque, tellus sem mollis dui, in sodales elit erat",
+		"details": "non enim commodo hendrerit. Donec"
+	},
+	{
+		"name": "mus. Donec dignissim magna a tortor. Nunc commodo auctor velit.",
+		"details": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet posuere, enim nisl elementum purus,"
+	},
+	{
+		"name": "et ipsum cursus vestibulum. Mauris magna. Duis dignissim tempor arcu.",
+		"details": "ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor,"
+	},
+	{
+		"name": "Aenean gravida nunc sed pede. Cum sociis natoque penatibus et",
+		"details": "at"
+	},
+	{
+		"name": "euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget",
+		"details": "in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel"
+	},
+	{
+		"name": "mi, ac mattis velit justo nec ante. Maecenas mi felis,",
+		"details": "sed tortor. Integer aliquam adipiscing lacus."
+	},
+	{
+		"name": "vel, vulputate eu, odio. Phasellus at augue id ante dictum",
+		"details": "leo. Vivamus nibh"
+	},
+	{
+		"name": "consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus sit",
+		"details": "ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy"
+	},
+	{
+		"name": "lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc",
+		"details": "orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit,"
+	},
+	{
+		"name": "eu tellus eu augue porttitor interdum. Sed auctor odio a",
+		"details": "turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem"
+	},
+	{
+		"name": "velit eget laoreet posuere, enim nisl elementum purus, accumsan interdum",
+		"details": "sapien imperdiet ornare."
+	}
+])
+
+db.items.createIndex({ name: "text", details: "text" })
